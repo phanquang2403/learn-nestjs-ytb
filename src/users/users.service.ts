@@ -31,7 +31,10 @@ export class UsersService {
     },
   ];
 
-  findAll(): User[] {
+  findAll(name?: string): User[] {
+    if (name) {
+      return this.user.filter((item) => item.name === name);
+    }
     return this.user;
   }
 
